@@ -2,7 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 // import Basic1 from './components/Basic1';
 // import Basic2 from './components/Basic2';
-import BasicUseEffect from './components/BasicUseEffect';
+// import BasicUseEffect from './components/BasicUseEffect';
+import TimerContainer from './components/TimerContainer';
 
 function App() {
   return (
@@ -14,15 +15,8 @@ function App() {
         </p>
         {/* <Basic1 /> */}
         {/* <Basic2 /> */}
-        <BasicUseEffect />
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        {/* <BasicUseEffect /> */}
+        <TimerContainer />
       </header>
     </div>
   );
