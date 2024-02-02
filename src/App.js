@@ -1,7 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import AppContext from './contexts/AppContext';
-import B from './components/B';
+// import B from './components/B';
+import BasicReducer from './components/BasicReducer';
 // import ApiFetch from './components/ApiFetch';
 // import Basic1 from './components/Basic1';
 // import Basic2 from './components/Basic2';
@@ -19,7 +20,8 @@ function App() {
           {/* <BasicUseEffect /> */}
           {/* <TimerContainer /> */}
           {/* <ApiFetch /> */}
-          <B />
+          {/* <B /> */}
+          <BasicReducer />
         </header>
       </div>
     </AppContext.Provider>
