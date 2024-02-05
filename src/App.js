@@ -2,7 +2,8 @@ import React, {useReducer} from 'react'
 import logo from './logo.svg';
 import './App.css';
 import AppContext from './contexts/AppContext';
-import CompB from './components/CompB';
+import Memo from './components/Memo';
+// import CompB from './components/CompB';
 // import CompB from './components/CompB';
 // import B from './components/B';
 // import BasicReducer from './components/BasicReducer';
@@ -41,8 +42,9 @@ function App() {
           {/* <ApiFetch /> */}
           {/* <B /> */}
           {/* <BasicReducer /> */}
-          Count {count}
-          <CompB />
+          {/* Count {count} */}
+          {/* <CompB /> */}
+          <Memo />
         </header>
       </div>
     </AppContext.Provider>
