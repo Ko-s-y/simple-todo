@@ -33,6 +33,8 @@ function App() {
   const [count1, setCount1] = useState(0)
   const [count2, setCount2] = useState(0)
 
+  // useCallbackの第二引数を空[ ]にすることで、AddCount1, AddCount2関数のclick毎の再定義を防ぐことが出来、
+  // CountClick コンポーネントのレンダリングを初回のみに減らすことが出来る。
   const AddCount1 = useCallback(() => {
     setCount1(prevCount1 => prevCount1 + 1)
   }, [count1])
