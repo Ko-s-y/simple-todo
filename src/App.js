@@ -1,4 +1,4 @@
-import React, {useReducer, useState} from 'react'
+import React, {useReducer, useState, useCallback} from 'react'
 import logo from './logo.svg';
 import './App.css';
 import AppContext from './contexts/AppContext';
@@ -33,12 +33,12 @@ function App() {
   const [count1, setCount1] = useState(0)
   const [count2, setCount2] = useState(0)
 
-  const AddCount1 = () => {
+  const AddCount1 = useCallback(() => {
     setCount1(prevCount1 => prevCount1 + 1)
-  }
-  const AddCount2 = () => {
+  }, [count1])
+  const AddCount2 = useCallback(() => {
     setCount2(prevCount2 => prevCount2 + 1)
-  }
+  }, [count2])
 
   const [count, dispatch] = useReducer(reducer, initialState)
 
