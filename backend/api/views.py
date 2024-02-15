@@ -13,7 +13,7 @@ class UserViewSet(viewsets.ModelViewSet):
   permission_class = (AllowAny,)
 
 class ManageUserView(generics.RetrieveUpdateAPIView):
-  selializer_class = UserSerializer
+  serializer_class = UserSerializer
   authentication_classes = (TokenAuthentication,)
   permission_classes = (IsAuthenticated,)
 
