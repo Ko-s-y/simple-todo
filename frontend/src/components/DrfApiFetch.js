@@ -45,7 +45,7 @@ const DrfApiFetch = () => {
       <input type='text' value={id} onChange={event=>{setId(event.target.value)}} />
       <br/>
       <button type='button' onClick={() => getTask()}>Get task</button>
-      <button type='button' onClick={() => deleteTask()}>Delete task</button>
+      <button type='button' onClick={() => deleteTask()}>Delete Task</button>
       <h3>{selectedTask.title} {selectedTask.id}</h3>
     </div>
   )
