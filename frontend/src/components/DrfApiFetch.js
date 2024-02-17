@@ -24,20 +24,26 @@ const DrfApiFetch = () => {
     .then(res => {setSelectedTask(res.data)})
   }
 
-  const deleteTask = () => {
-    axios.delete(`http://127.0.0.1:8000/api/tasks/${id}/`, {
+  const deleteTask = (taskId) => {
+    axios.delete(`http://127.0.0.1:8000/api/tasks/${taskId}/`, {
       headers: {
         'Authorization': 'Token ccd396af99a934a5290b68add5bb1dbeb812cb18'
       }
     })
-    .then(res => console.log(res))
+    .then(res => {setTasks(tasks.filter(task => task.id !== taskId)); setSelectedTask([])})
   }
 
   return (
     <div>
       <ul>
         {
-          tasks.map(task => <li key={task.id}> {task.id}: {task.title} </li>)
+          tasks.map(task =>
+          <li key={task.id}>
+            {task.id}: {task.title}
+            <button onClick={() => deleteTask(task.id)}>
+              <i className='fas fa-trash-alt'></i>
+            </button>
+          </li>)
         }
       </ul>
 
@@ -45,7 +51,6 @@ const DrfApiFetch = () => {
       <input type='text' value={id} onChange={event=>{setId(event.target.value)}} />
       <br/>
       <button type='button' onClick={() => getTask()}>Get task</button>
-      <button type='button' onClick={() => deleteTask()}>Delete Task</button>
       <h3>{selectedTask.title} {selectedTask.id}</h3>
     </div>
   )
