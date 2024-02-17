@@ -44,7 +44,10 @@ const DrfApiFetch = () => {
         'Authorization': 'Token ccd396af99a934a5290b68add5bb1dbeb812cb18'
       }
     })
-    .then(res => setTasks([...tasks, res.data]))
+    .then(res => {
+      setTasks([...tasks, res.data])
+      setEditedTask({ id: "", title: "" });
+    })
   }
 
   const handleInputChange = () => event => {
